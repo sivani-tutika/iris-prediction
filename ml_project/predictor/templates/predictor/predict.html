@@ -1,0 +1,10 @@
+<!-- predictor/templates/predictor/predict.html -->
+<h1>Predict Iris Flower Species</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Predict</button>
+</form>
+{% if prediction is not None %}
+<h2>Prediction: {{ prediction }}</h2>
+{% endif %}
